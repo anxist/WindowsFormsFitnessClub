@@ -12,9 +12,13 @@ using MaterialSkin;
 
 namespace WindowsFormsFitness
 {
+    
     public partial class Manajer :MaterialForm
     {
         readonly MaterialSkin.MaterialSkinManager materialSkinManager;
+        private Command tableClient = new Command();
+        private int selectIndex = 0;
+        
         public Manajer()
         {
             InitializeComponent();
@@ -28,7 +32,32 @@ namespace WindowsFormsFitness
 
         private void Manajer_Load(object sender, EventArgs e)
         {
+        
+        }
 
+        private void Manform(object sender, EventArgs e)
+        {
+            LoadTable();
+        }
+
+        private void LoadTable()
+        {
+            tableClient.LoadData("Select * From client");
+            dataGridView1.DataSource = tableClient.MainTable;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadTable();
+        }
+
+        private void Delite_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы уверены что хотитее удалить " + dataGridView1[1, selectIndex].Value.ToString() + "?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Command deliteClient  = new Command();
+                deliteClient.SendCommand("Delite client WHERE ID_client = " + dataGridView1[0, selectIndex].Value.ToString());
+            }
         }
     }
 }

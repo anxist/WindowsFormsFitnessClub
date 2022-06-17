@@ -37,12 +37,15 @@ namespace WindowsFormsFitness
 
         }
 
-        private void textBoxLogin_TextChanged(object sender, EventArgs e)
+
+
+
+        private void bttnEnter_Click(object sender, EventArgs e)
         {
             Command command = new Command();
-            command.LoadData("Select * From log_in WHERE login = '" + textBoxLogin.Text + "' AND password = '" + textBoxPassword + "'");
-            
-            if(CountUnsuccessful < 3)
+            command.LoadData("Select * From log_in WHERE login = '" + textBoxLogin.Text + "' AND password = '" + textBoxPassword.Text + "'");
+
+            if (CountUnsuccessful < 3)
             {
 
                 if (command.MainTable.Rows.Count > 0)
@@ -59,19 +62,18 @@ namespace WindowsFormsFitness
             }
             else
             {
-                if(command.MainTable.Rows.Count > 0 && textBoxCapcha.Text == labelCapcha.Text)
+                if (command.MainTable.Rows.Count > 0 && textBoxCapcha.Text == labelCapcha.Text)
                 {
                     MessageBox.Show("Вы вошли под именем " + command.MainTable.Rows[0][3].ToString());
                     LoadForm(command.MainTable.Rows[0][3].ToString());
                 }
                 else
                 {
-                   MessageBox.Show("Вы ввели неправильно логин или пароль, попробуйте еще раз.");
-                   GenereticCapcha();
+                    MessageBox.Show("Вы ввели неправильно логин или пароль, попробуйте еще раз.");
+                    GenereticCapcha();
                 }
             }
-        }
-
+        }   
 
         private void GenereticCapcha()
         {
@@ -80,9 +82,9 @@ namespace WindowsFormsFitness
             textBoxCapcha.Visible = true;
 
             Random rand = new Random();
-            int randNum = rand.Next(1,5);
+            int randNum = rand.Next(1, 5);
 
-            switch(randNum)
+            switch (randNum)
             {
                 case 1:
                     labelCapcha.Text = "FgcyU";
@@ -102,14 +104,22 @@ namespace WindowsFormsFitness
         {
             switch (_role)
             {
-                case "Director":
-                    Director director = new Director(); ;
-                    director.Show();
+                case "Директор":
+                    Director diR = new Director();
+                    diR.Show();
                     this.Hide();
                     break;
-
+                case "Администратор":
+                    Administrator admin = new Administrator();
+                    admin.Show();
+                    this.Hide();
+                    break;
+                case "Менеджер":
+                    Manajer man = new Manajer();
+                    man.Show();
+                    this.Hide();
+                    break;
             }
         }
-
     }
 }

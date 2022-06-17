@@ -49,6 +49,7 @@
             this.bttnEnter.TabIndex = 12;
             this.bttnEnter.Text = "Войти";
             this.bttnEnter.UseVisualStyleBackColor = true;
+            this.bttnEnter.Click += new System.EventHandler(this.bttnEnter_Click);
             // 
             // textBoxPassword
             // 
@@ -85,7 +86,7 @@
             this.textBoxLogin.TabIndex = 10;
             this.textBoxLogin.Text = "";
             this.textBoxLogin.TrailingIcon = null;
-            this.textBoxLogin.TextChanged += new System.EventHandler(this.textBoxLogin_TextChanged);
+            
             // 
             // pictureBox1
             // 
@@ -101,7 +102,7 @@
             this.textBoxCapcha.AnimateReadOnly = false;
             this.textBoxCapcha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxCapcha.Depth = 0;
-            this.textBoxCapcha.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxCapcha.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBoxCapcha.Hint = "Капча";
             this.textBoxCapcha.LeadingIcon = null;
             this.textBoxCapcha.Location = new System.Drawing.Point(488, 503);

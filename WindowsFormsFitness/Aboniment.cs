@@ -12,12 +12,10 @@ using MaterialSkin;
 
 namespace WindowsFormsFitness
 {
-    public partial class Director : MaterialForm
+    public partial class Aboniment : MaterialForm
     {
         readonly MaterialSkin.MaterialSkinManager materialSkinManager;
-        private Command tableEmp = new Command();
-        private Command tableDogovor = new Command(); 
-        public Director()
+        public Aboniment()
         {
             InitializeComponent();
 
@@ -28,26 +26,23 @@ namespace WindowsFormsFitness
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightGreen700, TextShade.WHITE);
         }
 
-        private void Director_Load(object sender, EventArgs e)
+        private void Aboniment_Load(object sender, EventArgs e)
         {
+            Command listAbonimenttype = new Command();
+            listAbonimenttype.LoadData("Select * From aboniment");
+
+            materialComboBox1.Items.AddRange(listAbonimenttype.MainTable.AsEnumerable().Select(row => $"{row["tipe"]} {row["month"]} {row["cost"]}").ToArray());
+
+            Command listClient = new Command();
+            listClient.LoadData("Select * From client");
+            for (int i = 0; i < listClient.MainTable.Rows.Count; i++)
+            {
+                materialComboBox2.Items.Add(listClient.MainTable.Rows[i][1].ToString());
+            }
 
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-            LoadTable();
-        }
-
-        private void LoadTable()
-        {
-            tableEmp.LoadData("Select * From employee");
-            dataGridView1.DataSource = tableEmp.MainTable;
-
-            tableDogovor.LoadData("Select * From dogovor");
-            dataGridView4.DataSource = tableDogovor.MainTable;
-        }
-
-        private void Delite_Click(object sender, EventArgs e)
+        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

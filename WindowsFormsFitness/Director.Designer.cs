@@ -32,9 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Director));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.home = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Удалить = new System.Windows.Forms.Button();
-            this.Найти = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -60,7 +58,7 @@
             this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.dogovor = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
+            this.search1 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.materialTextBox12 = new MaterialSkin.Controls.MaterialTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -93,9 +91,7 @@
             // 
             // home
             // 
-            this.home.Controls.Add(this.button1);
-            this.home.Controls.Add(this.Удалить);
-            this.home.Controls.Add(this.Найти);
+            this.home.Controls.Add(this.buttonUpdate);
             this.home.Controls.Add(this.dataGridView1);
             this.home.Controls.Add(this.materialTextBox1);
             this.home.Controls.Add(this.materialLabel1);
@@ -108,38 +104,17 @@
             this.home.Text = " Главная";
             this.home.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonUpdate
             // 
-            this.button1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(916, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 49);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Обновить";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Удалить
-            // 
-            this.Удалить.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Удалить.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Удалить.Location = new System.Drawing.Point(1150, 18);
-            this.Удалить.Name = "Удалить";
-            this.Удалить.Size = new System.Drawing.Size(111, 49);
-            this.Удалить.TabIndex = 6;
-            this.Удалить.Text = "Удалить";
-            this.Удалить.UseVisualStyleBackColor = true;
-            // 
-            // Найти
-            // 
-            this.Найти.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Найти.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Найти.Location = new System.Drawing.Point(1033, 17);
-            this.Найти.Name = "Найти";
-            this.Найти.Size = new System.Drawing.Size(111, 49);
-            this.Найти.TabIndex = 5;
-            this.Найти.Text = "Найти";
-            this.Найти.UseVisualStyleBackColor = true;
+            this.buttonUpdate.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.buttonUpdate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonUpdate.Location = new System.Drawing.Point(1150, 18);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(111, 49);
+            this.buttonUpdate.TabIndex = 7;
+            this.buttonUpdate.Text = "Обновить";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // dataGridView1
             // 
@@ -165,7 +140,7 @@
             this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox1.Multiline = false;
             this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(894, 50);
+            this.materialTextBox1.Size = new System.Drawing.Size(1128, 50);
             this.materialTextBox1.TabIndex = 3;
             this.materialTextBox1.Text = "";
             this.materialTextBox1.TrailingIcon = null;
@@ -210,7 +185,7 @@
             this.materialTextBox9.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox9.Hint = "Адрес";
             this.materialTextBox9.LeadingIcon = null;
-            this.materialTextBox9.Location = new System.Drawing.Point(674, 181);
+            this.materialTextBox9.Location = new System.Drawing.Point(677, 255);
             this.materialTextBox9.MaxLength = 50;
             this.materialTextBox9.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox9.Multiline = false;
@@ -223,7 +198,7 @@
             // button2
             // 
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(1010, 511);
+            this.button2.Location = new System.Drawing.Point(1013, 585);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(222, 45);
             this.button2.TabIndex = 14;
@@ -238,7 +213,7 @@
             this.materialTextBox10.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox10.Hint = "Должность";
             this.materialTextBox10.LeadingIcon = null;
-            this.materialTextBox10.Location = new System.Drawing.Point(674, 287);
+            this.materialTextBox10.Location = new System.Drawing.Point(677, 361);
             this.materialTextBox10.MaxLength = 50;
             this.materialTextBox10.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox10.Multiline = false;
@@ -256,7 +231,7 @@
             this.materialTextBox7.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox7.Hint = "Зарплата";
             this.materialTextBox7.LeadingIcon = null;
-            this.materialTextBox7.Location = new System.Drawing.Point(674, 403);
+            this.materialTextBox7.Location = new System.Drawing.Point(677, 477);
             this.materialTextBox7.MaxLength = 50;
             this.materialTextBox7.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox7.Multiline = false;
@@ -274,7 +249,7 @@
             this.materialTextBox8.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox8.Hint = "Номер телефона";
             this.materialTextBox8.LeadingIcon = null;
-            this.materialTextBox8.Location = new System.Drawing.Point(25, 402);
+            this.materialTextBox8.Location = new System.Drawing.Point(36, 476);
             this.materialTextBox8.MaxLength = 50;
             this.materialTextBox8.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox8.Multiline = false;
@@ -292,7 +267,7 @@
             this.materialTextBox6.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox6.Hint = "Отчество";
             this.materialTextBox6.LeadingIcon = null;
-            this.materialTextBox6.Location = new System.Drawing.Point(25, 287);
+            this.materialTextBox6.Location = new System.Drawing.Point(36, 361);
             this.materialTextBox6.MaxLength = 50;
             this.materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox6.Multiline = false;
@@ -310,7 +285,7 @@
             this.materialTextBox5.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox5.Hint = "Имя";
             this.materialTextBox5.LeadingIcon = null;
-            this.materialTextBox5.Location = new System.Drawing.Point(25, 181);
+            this.materialTextBox5.Location = new System.Drawing.Point(36, 255);
             this.materialTextBox5.MaxLength = 50;
             this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox5.Multiline = false;
@@ -328,7 +303,7 @@
             this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox4.Hint = "Фамилия";
             this.materialTextBox4.LeadingIcon = null;
-            this.materialTextBox4.Location = new System.Drawing.Point(25, 62);
+            this.materialTextBox4.Location = new System.Drawing.Point(36, 136);
             this.materialTextBox4.MaxLength = 50;
             this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox4.Multiline = false;
@@ -346,7 +321,7 @@
             this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox3.Hint = "Паспорт";
             this.materialTextBox3.LeadingIcon = null;
-            this.materialTextBox3.Location = new System.Drawing.Point(674, 62);
+            this.materialTextBox3.Location = new System.Drawing.Point(677, 136);
             this.materialTextBox3.MaxLength = 50;
             this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox3.Multiline = false;
@@ -438,7 +413,7 @@
             this.materialTextBox15.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox15.Hint = "Номер телефона";
             this.materialTextBox15.LeadingIcon = null;
-            this.materialTextBox15.Location = new System.Drawing.Point(51, 452);
+            this.materialTextBox15.Location = new System.Drawing.Point(51, 505);
             this.materialTextBox15.MaxLength = 50;
             this.materialTextBox15.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox15.Multiline = false;
@@ -456,7 +431,7 @@
             this.materialTextBox16.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox16.Hint = "Отчество";
             this.materialTextBox16.LeadingIcon = null;
-            this.materialTextBox16.Location = new System.Drawing.Point(51, 337);
+            this.materialTextBox16.Location = new System.Drawing.Point(51, 390);
             this.materialTextBox16.MaxLength = 50;
             this.materialTextBox16.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox16.Multiline = false;
@@ -474,7 +449,7 @@
             this.materialTextBox17.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox17.Hint = "Имя";
             this.materialTextBox17.LeadingIcon = null;
-            this.materialTextBox17.Location = new System.Drawing.Point(51, 231);
+            this.materialTextBox17.Location = new System.Drawing.Point(51, 284);
             this.materialTextBox17.MaxLength = 50;
             this.materialTextBox17.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox17.Multiline = false;
@@ -492,7 +467,7 @@
             this.materialTextBox18.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox18.Hint = "Фамилия";
             this.materialTextBox18.LeadingIcon = null;
-            this.materialTextBox18.Location = new System.Drawing.Point(51, 112);
+            this.materialTextBox18.Location = new System.Drawing.Point(51, 161);
             this.materialTextBox18.MaxLength = 50;
             this.materialTextBox18.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox18.Multiline = false;
@@ -541,18 +516,17 @@
             // button8
             // 
             this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button8.Location = new System.Drawing.Point(1005, 522);
+            this.button8.Location = new System.Drawing.Point(1050, 620);
             this.button8.Name = "button8";
             this.button8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button8.Size = new System.Drawing.Size(222, 45);
             this.button8.TabIndex = 26;
             this.button8.Text = "Редактировать";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // dogovor
             // 
-            this.dogovor.Controls.Add(this.button7);
+            this.dogovor.Controls.Add(this.search1);
             this.dogovor.Controls.Add(this.dataGridView4);
             this.dogovor.Controls.Add(this.materialTextBox12);
             this.dogovor.ImageKey = "clipboard.png";
@@ -563,16 +537,16 @@
             this.dogovor.Text = " Договор";
             this.dogovor.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // search1
             // 
-            this.button7.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button7.Location = new System.Drawing.Point(1081, 17);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(191, 49);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "Найти";
-            this.button7.UseVisualStyleBackColor = true;
+            this.search1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.search1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.search1.Location = new System.Drawing.Point(1081, 17);
+            this.search1.Name = "search1";
+            this.search1.Size = new System.Drawing.Size(191, 49);
+            this.search1.TabIndex = 12;
+            this.search1.Text = "Найти";
+            this.search1.UseVisualStyleBackColor = true;
             // 
             // dataGridView4
             // 
@@ -644,9 +618,7 @@
 
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage home;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button Удалить;
-        private System.Windows.Forms.Button Найти;
+        private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
@@ -672,7 +644,7 @@
         private MaterialSkin.Controls.MaterialTextBox materialTextBox21;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TabPage dogovor;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button search1;
         private System.Windows.Forms.DataGridView dataGridView4;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox12;
         private System.Windows.Forms.ImageList imageList1;

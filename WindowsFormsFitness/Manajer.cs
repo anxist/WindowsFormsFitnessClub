@@ -30,11 +30,6 @@ namespace WindowsFormsFitness
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightGreen700, TextShade.WHITE);
         }
 
-        private void Manajer_Load(object sender, EventArgs e)
-        {
-        
-        }
-
         private void Manform(object sender, EventArgs e)
         {
             LoadTable();
@@ -56,8 +51,19 @@ namespace WindowsFormsFitness
             if (MessageBox.Show("Вы уверены что хотитее удалить " + dataGridView1[1, selectIndex].Value.ToString() + "?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Command deliteClient  = new Command();
-                deliteClient.SendCommand("Delite client WHERE ID_client = " + dataGridView1[0, selectIndex].Value.ToString());
+                deliteClient.SendCommand("Delite Сlient where ID_Сlient = " + dataGridView1[0, selectIndex].Value.ToString());
             }
         }
-    }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Manajer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
 }

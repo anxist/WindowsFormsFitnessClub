@@ -34,7 +34,7 @@
             this.home = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.Delite = new System.Windows.Forms.Button();
-            this.Найти = new System.Windows.Forms.Button();
+            this.search = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -106,7 +106,7 @@
             // 
             this.home.Controls.Add(this.button1);
             this.home.Controls.Add(this.Delite);
-            this.home.Controls.Add(this.Найти);
+            this.home.Controls.Add(this.search);
             this.home.Controls.Add(this.dataGridView1);
             this.home.Controls.Add(this.materialTextBox1);
             this.home.Controls.Add(this.materialLabel1);
@@ -143,16 +143,17 @@
             this.Delite.UseVisualStyleBackColor = true;
             this.Delite.Click += new System.EventHandler(this.Delite_Click);
             // 
-            // Найти
+            // search
             // 
-            this.Найти.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Найти.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Найти.Location = new System.Drawing.Point(993, 17);
-            this.Найти.Name = "Найти";
-            this.Найти.Size = new System.Drawing.Size(138, 49);
-            this.Найти.TabIndex = 5;
-            this.Найти.Text = "Найти";
-            this.Найти.UseVisualStyleBackColor = true;
+            this.search.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.search.Location = new System.Drawing.Point(993, 17);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(138, 49);
+            this.search.TabIndex = 5;
+            this.search.Text = "Найти";
+            this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.search_Click);
             // 
             // dataGridView1
             // 
@@ -162,7 +163,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1259, 516);
+            this.dataGridView1.Size = new System.Drawing.Size(1259, 591);
             this.dataGridView1.TabIndex = 4;
             // 
             // materialTextBox1
@@ -695,6 +696,7 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(1255, 555);
             this.dataGridView2.TabIndex = 9;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // materialTextBox2
             // 
@@ -764,7 +766,7 @@
         private System.Windows.Forms.TabPage home;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Delite;
-        private System.Windows.Forms.Button Найти;
+        private System.Windows.Forms.Button search;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;

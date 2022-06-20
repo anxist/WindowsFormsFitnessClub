@@ -16,7 +16,7 @@ namespace WindowsFormsFitness
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(Log_in());
+            Application.Run(new Log_in()); 
         }
     }
 }
